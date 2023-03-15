@@ -3,10 +3,12 @@ import { MongoMemoryServer } from 'mongodb-memory-server';
 
 async function connect() {
     const mongod = await MongoMemoryServer.create();
-    const geturi = mongod.getUri();
+    const getUri = mongod.getUri();
+
     mongoose.set('strictQuery', true)
-    const db = await mongoose.connect(geturi);
+    const db = await mongoose.connect(getUri);
     console.log('database connected');
+
     return db;
 
 }

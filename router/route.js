@@ -6,7 +6,7 @@ import * as controller from '../controller/appController.js'
 /** POST Methods */
 router.route('/register').post(controller.register); // register user
 router.route('/authenticate').post((req, res) => res.end())
-router.route('/login').post(controller.login); // login in app
+router.route('/login').post(controller.verifyOTP, controller.login); // login in app
 
 /** GET Methods */
 router.route('/user/:username').get(controller.getUser) // user with username
